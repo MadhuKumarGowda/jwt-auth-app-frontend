@@ -1,0 +1,25 @@
+label,.loginText{
+    color: whitesmoke;
+}
+
+.loginform{
+    background-color: rgba(13,59,95,255);
+}
+
+@media screen and(max-width: 600px) {
+    .loginContainer{
+       
+    clear: both;
+    float: left;   
+    display: none;
+    }
+    
+}
+
+@media screen and(max-width: 601px) {
+    .loginContainer{
+        background-image: url("../../assets/images/loginBG.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;   
+    }
+}

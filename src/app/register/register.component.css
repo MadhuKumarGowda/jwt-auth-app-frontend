@@ -1,0 +1,15 @@
+label{
+    color: whitesmoke;
+}
+.registerform{
+    background-color: rgba(13,59,95,255);
+}
+
+.disabled{
+   text-decoration: none;
+    pointer-events: none;
+}
+
+.disabled:hover{
+    cursor: not-allowed;
+}
