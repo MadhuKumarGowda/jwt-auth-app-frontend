@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Emitters } from '../Emitters/emitters';
 
 @Component({
   selector: 'app-home',
@@ -18,8 +19,10 @@ export class HomeComponent implements OnInit {
       withCredentials:true,
     }).subscribe((res:any)=>{      
       this.message = `Hi ${res.name}`;
+      Emitters.authEmitters.emit(true);
     },(err)=>{
       this.message = err.error.message;
+      Emitters.authEmitters.emit(false);
     })
   }
 

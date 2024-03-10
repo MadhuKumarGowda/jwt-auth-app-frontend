@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
     } else{
       this.http.post("http://localhost:5000/api/register", user, {
         withCredentials:true
-      }).subscribe(()=> this.router.navigate(["/home"]), (err)=>{
+      }).subscribe(()=> this.router.navigate(["/login"]), (err)=>{
           this.formError = err.error.message;
           
         });

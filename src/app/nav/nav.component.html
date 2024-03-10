@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-  <a class="navbar-brand p-2" class="nav-link active">JWT Authentication</a>
+  <a class="navbar-brand p-2" class="nav-link active p-2">JWT Authentication</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -11,9 +11,10 @@
   >
     <span class="navbar-toggler-icon"></span>
   </button>
-  @if(token){
+
   <div class="collapse me-3 navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+      @if(!authenticate){
       <li class="nav-item">
         <a class="nav-link" routerLink="/login" class="nav-link active"
           >Login</a
@@ -24,16 +25,13 @@
           >Register</a
         >
       </li>
+      } @if(authenticate){
       <li class="nav-item">
-        <button
-          type="button"
-          class="w-100 btn btn-secondary"
-          (click)="logout()"
-        >
+        <a routerLink="/login" class="nav-link w-100" (click)="logout()">
           Logout
-        </button>
+        </a>
       </li>
+      }
     </ul>
   </div>
-  }
 </nav>
